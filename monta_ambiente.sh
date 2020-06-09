@@ -20,12 +20,14 @@ fi
 
 echo "PARANDO MAQUINA DOCKER"
 docker stop mongodb
+docker stop rabbitmq
 
 echo "AGUARDA 2 SEGUNDOS"
 sleep 2
 
 echo "REMOVENDO MAQUINA DOCKER"
 docker rm -f mongodb
+docker rm -f rabbitmq
 
 echo "AGUARDA 2 SEGUNDOS"
 sleep 2
