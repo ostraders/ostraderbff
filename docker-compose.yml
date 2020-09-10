@@ -31,3 +31,7 @@ services:
       - /data/rabbitMQ:/data
     networks:
       - app-tier
+    environment:
+      RABBITMQ_DEFAULT_USER: admin
+      RABBITMQ_DEFAULT_PASS: secret
+      RABBITMQ_DEFAULT_VHOST: personal
