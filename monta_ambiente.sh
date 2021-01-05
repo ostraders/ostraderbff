@@ -49,7 +49,17 @@ docker rm -f rabbitmq
 echo "AGUARDA 2 SEGUNDOS"
 sleep 2
 
-echo "CRIANDO MÁQUINA MONGODB"
+echo "CRIANDO MÁQUINA MONGODB + MAQUINA RABBITMQ"
 docker-compose up -d
+
+echo "AGUARDA 30 SEGUNDOS"
+sleep 30
+
+echo "Configurando o rabbitMQ"
+docker exec -i -t rabbitmq rabbitmqctl set_user_tags admin administrator
+docker exec -i -t rabbitmq rabbitmqctl add_vhost rabbitBmf
+docker exec -i -t rabbitmq rabbitmqctl add_user rabbitBmf rabbitBmf
+docker exec -i -t rabbitmq rabbitmqctl set_user_tags rabbitBmf guest
+docker exec -i -t rabbitmq rabbitmqctl set_permissions -p rabbitBmf rabbitBmf ".*" ".*" ".*"
 
 exit 1

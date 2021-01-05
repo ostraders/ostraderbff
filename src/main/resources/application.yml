@@ -1,2 +1,11 @@
 server:
   port: 8669
+
+spring:
+  profiles: local
+  rabbitmq:
+    host: localhost
+    port: 5672
+    virtual-host: rabbitBmf
+    username: rabbitBmf
+    password: rabbitBmf
