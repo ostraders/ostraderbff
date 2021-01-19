@@ -43,6 +43,7 @@ class KafkaConfig {
             "org.apache.kafka.common.serialization.StringDeserializer"
         props[ConsumerConfig.ENABLE_AUTO_COMMIT_CONFIG] = false
         props[ConsumerConfig.MAX_POLL_RECORDS_CONFIG] = 10
+        props[ConsumerConfig.MAX_POLL_INTERVAL_MS_CONFIG] = 1000
         props[ProducerConfig.MAX_REQUEST_SIZE_CONFIG] = 15728640
         props[ConsumerConfig.AUTO_OFFSET_RESET_CONFIG] = "earliest"
         return props
