@@ -7,17 +7,13 @@ import org.springframework.kafka.annotation.KafkaListener
 import org.springframework.stereotype.Component
 
 @Component
-class MessageListenerCandleDiario(usecase: MessageExecutorRecomendacaoDiario) {
-
-    private val usecase: MessageExecutorRecomendacaoDiario
+class MessageListenerCandleDiario(
+    private val executorRecomendacaoDiario: MessageExecutorRecomendacaoDiario
+) {
 
     @KafkaListener(topics = [RECOMENDACAO_DIARIA])
     fun consume(consumerRecord: ConsumerRecord<*, *>) {
-        usecase.execute(consumerRecord.value().toString())
-    }
-
-    init {
-        this.usecase = usecase
+        executorRecomendacaoDiario.execute(consumerRecord.value().toString())
     }
 
 }

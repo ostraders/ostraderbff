@@ -10,15 +10,13 @@ import org.springframework.stereotype.Service
 @Service
 class MessageExecutorRecomendacaoDiario(
     private val objectMapper: ObjectMapper,
-    usecase: RecomendacaoDiarioService
+    private val recomendacaoService: RecomendacaoDiarioService
 ) {
-
-    private val usecase: RecomendacaoDiarioService
 
     fun execute(payload: String) {
         val domain: RecomendacaoDiario = payloadToDomain(payload)
         log.info("payload: $payload")
-        usecase.incluirRecomendacaoDiario(domain)
+        recomendacaoService.incluirRecomendacaoDiario(domain)
     }
 
     private fun payloadToDomain(payload: String): RecomendacaoDiario {
@@ -33,7 +31,4 @@ class MessageExecutorRecomendacaoDiario(
         private val log = LoggerFactory.getLogger(MessageExecutorRecomendacaoDiario::class.java)
     }
 
-    init {
-        this.usecase = usecase
-    }
 }
