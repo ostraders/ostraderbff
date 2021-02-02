@@ -1,5 +1,5 @@
 package com.ricardococati.ostraderbff.usecases.recomendacao.message
 
-interface MessageExecutorRecomendacaoDiario {
+interface MessageExecutorRecomendacaoSemanal {
     fun execute(payload: String)
 }
