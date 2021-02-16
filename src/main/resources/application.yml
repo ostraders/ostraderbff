@@ -3,3 +3,6 @@ server:
 
 spring:
   profiles: local
+  data:
+    mongodb:
+      uri: mongodb://dbbmf:dbbmf@mongodb:27017/dbbmf

@@ -1,9 +1,9 @@
 package com.ricardococati.ostraderbff.usecases.recomendacao
 
-import com.ricardococati.ostraderbff.entities.domains.recomendacao.RecomendacaoSemanal
+import com.ricardococati.ostraderbff.entities.domains.requests.recomendacao.RecomendacaoSemanal
 
 interface RecomendacaoSemanalService {
 
-    fun incluirRecomendacaoSemanal(message: RecomendacaoSemanal?): Boolean?
+    fun incluirRecomendacaoSemanal(message: RecomendacaoSemanal?)
 
 }

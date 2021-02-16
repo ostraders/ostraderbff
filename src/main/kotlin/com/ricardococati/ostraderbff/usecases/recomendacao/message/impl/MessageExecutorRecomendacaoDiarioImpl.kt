@@ -1,7 +1,8 @@
 package com.ricardococati.ostraderbff.usecases.recomendacao.message.impl
 
 import com.fasterxml.jackson.databind.ObjectMapper
-import com.ricardococati.ostraderbff.entities.domains.recomendacao.RecomendacaoDiario
+import com.ricardococati.ostraderbff.adapters.repositories.recomendacao.RecomendacaoDiarioRepository
+import com.ricardococati.ostraderbff.entities.domains.requests.recomendacao.RecomendacaoDiario
 import com.ricardococati.ostraderbff.usecases.recomendacao.RecomendacaoDiarioService
 import com.ricardococati.ostraderbff.usecases.recomendacao.message.MessageExecutorRecomendacaoDiario
 import java.io.IOException

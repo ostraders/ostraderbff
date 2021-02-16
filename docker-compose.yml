@@ -13,8 +13,9 @@ services:
       - /data/mongoDB:/data/db
       - /data/mongoDB:/data/configdb
     environment:
-      MONGO_INITDB_ROOT_USERNAME: dbbmf
-      MONGO_INITDB_ROOT_PASSWORD: dbbmf
+      MONGODB_USERNAME: dbbmf
+      MONGODB_PASSWORD: dbbmf
+      MONGODB_DBNAME: dbbmf
     ports:
       - "27017:27017"
     networks:
